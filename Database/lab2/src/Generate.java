@@ -6,7 +6,7 @@ import java.util.Random;
 public class Generate {
 
   public static void main(String[] args) {
-    int num = 20;
+    int num = 1000000;
     int strLen = 12;
     int[] index = new int[num];
     for (int i = 0; i < num; i++) {
@@ -14,7 +14,7 @@ public class Generate {
     }
     shuffle(index);
     try {
-      File outputFile = new File("data.bin");
+      File outputFile = new File("data_1M.bin");
       OutputStream outputStream = new FileOutputStream(outputFile);
       for (int i = 0; i < num; i++) {
         outputStream.write(intToByteArray(index[i]));

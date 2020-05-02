@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
-public class Record {
+public class RecordWithPosition {
 
   private int a;
   private byte[] b;
   private long position;
 
-  public Record(int a, byte[] b, long position) {
+  public RecordWithPosition(int a, byte[] b, long position) {
     this.a = a;
     this.b = b;
     this.position = position;

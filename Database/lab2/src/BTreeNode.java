@@ -37,17 +37,22 @@ public class BTreeNode {
   }
 
   // 给定一个索引值, 指出要插入的子树
-  public BTreeNode getInsertingChild(Index index) {
-    // 如果是叶节点
+  public BTreeNode getChild(int value) {
+    // 如果是叶节点 返回自己
     if (this.getChildren().size() == 0) {
       return this;
     }
+    // 否则返回要添加的子树
     for (int i = 0; i < indexes.size(); i++) {
-      if (indexes.get(i).getIndexValue() > index.getIndexValue()) {
+      if (indexes.get(i).getIndexValue() > value) {
         return this.getChildren().get(i);
       }
     }
     return this.getChildren().get(this.getChildren().size()-1);
   }
 
+  @Override
+  public String toString() {
+    return this.getIndexes().toString();
+  }
 }

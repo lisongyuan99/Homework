@@ -28,4 +28,9 @@ public class Index implements Comparable<Index> {
   public int compareTo(Index o) {
     return this.indexValue - o.indexValue;
   }
+
+  @Override
+  public String toString() {
+    return String.valueOf(indexValue);
+  }
 }
