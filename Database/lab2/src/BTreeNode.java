@@ -28,7 +28,7 @@ public class BTreeNode {
       }
     }
     indexes.add(index);
-    return indexes.size()-1;// 这里已经添加过了
+    return indexes.size() - 1;// 这里已经添加过了
   }
 
   // 判断是否是叶子节点
@@ -48,7 +48,7 @@ public class BTreeNode {
         return this.getChildren().get(i);
       }
     }
-    return this.getChildren().get(this.getChildren().size()-1);
+    return this.getChildren().get(this.getChildren().size() - 1);
   }
 
   @Override

@@ -1,15 +1,11 @@
-import java.util.Arrays;
-
-public class Record {
+public class Record implements Comparable<Record>{
 
   private int a;
   private byte[] b;
-  private long position;
 
-  public Record(int a, byte[] b, long position) {
+  public Record(int a, byte[] b) {
     this.a = a;
     this.b = b;
-    this.position = position;
   }
 
   public int getA() {
@@ -28,16 +24,13 @@ public class Record {
     this.b = b;
   }
 
-  public long getPosition() {
-    return position;
-  }
-
-  public void setPosition(long position) {
-    this.position = position;
-  }
-
   @Override
   public String toString() {
     return "Record{" + a + ',' + new String(b) + '}';
+  }
+
+  @Override
+  public int compareTo(Record o) {
+    return this.a - o.getA();
   }
 }
